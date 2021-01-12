@@ -1,0 +1,49 @@
+﻿@model PTC.ViewModelLayer.ProductViewModel
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<table class="table">
+    <tr>
+        <th>
+            Product Name
+        </th>
+        <th>
+            Introduction Date
+        </th>
+        <th>
+            Url
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            action
+        </th>
+    </tr>
+
+    @foreach (var item in Model.dataCollection)
+    {
+       <tr>
+           <td>
+               @item.ProductName
+           </td>
+           <td>
+               @item.IntroductionDate
+           </td>
+           <td>
+               @item.Url
+           </td>
+           <td>
+               @item.Price
+           </td>
+           <td>
+               @Html.ActionLink("edit","EditProduct",new {id = item.ProductId})
+           </td>
+       </tr>    
+    }
+</table>
+
+

@@ -1,0 +1,51 @@
+﻿@model PTC.ViewModelLayer.ProductViewModel
+@{
+    ViewBag.Title = "EditProduct";
+}
+
+
+@using (Html.BeginForm())
+{
+    <div class="container">
+        <div class="form-group">
+            <label>
+                Product  Name
+            </label>
+            <div>
+                @Html.TextBoxFor(c => c.productData.ProductName, new { @class = "form-control" })
+                @Html.HiddenFor(c=>c.productData.ProductId)
+            </div>
+        </div>
+        <div class="form-group">
+            <label>
+                Introduction Date
+            </label>
+            <div>
+                @Html.TextBoxFor(c => c.productData.IntroductionDate, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label>
+                URL
+            </label>
+            <div>
+                @Html.TextBoxFor(c => c.productData.Url, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <label>
+                Price
+            </label>
+            <div>
+                @Html.TextBoxFor(c => c.productData.Price, new { @class = "form-control" })
+            </div>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">
+                Submit
+            </button>
+        </div>
+    </div>
+
+}
+
